@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <title>Abhis Mart Homes</title>
+
+    <!-- ✅ Preload the Logo Image -->
+    <link rel="preload" as="image" href="/images/logo.png">
+    <link rel="stylesheet" href="automatiom.css">
+
+    <!-- ✅ Preload Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    </noscript>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+    <!--font awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+</head>
+<style>
+    body {
+        background-color: #000000;
+        overflow-x: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    .title-hm {
+        font-size: 1.6rem;
+        /* Adjust size as needed */
+        font-weight: 600;
+        text-transform: uppercase;
+        background: linear-gradient(90deg, #ff8c00, #ff0080);
+        /* Gradient colors */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        white-space: nowrap;
+        /* Ensures text stays in one line */
+    }
+
+    .content h2 {
+
+        text-align: center;
+        color: aliceblue;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, ;
+        font-size: 40px;
+        margin-top: 40px;
+        font-weight: 690;
+
+    }
+
+    @media (max-width:768px) {
+        .content h2 {
+            font-size: 20px;
+        }
+
+        #quote {
+
+            width: 155px;
+            margin-left: 69px;
+        }
+
+    }
+
+    .custom-container {
+        margin: 0 auto;
+        max-width: 90%;
+        /* Adjust width as needed */
+    }
+
+    .title-home-Au {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: aliceblue;
+        margin-bottom: 40px;
+        font-weight: 600;
+        font-family: poppins;
+    }
+
+    #products-title {
+
+        color: aliceblue;
+        font-weight: 600;
+        font-family: poppins;
+        text-transform: uppercase;
+    }
+    .container-4{
+        
+        margin: 0 auto;
+        max-width: 90%;
+        width: auto;
+    }
+    .logo-right img {
+            width: 70px;
+        }
+
+        .logo-right img:hover {
+            transform: scale(0.9);
+        }
+
+        @media(max-width:768px) {
+            .carousel-title {
+                font-size: 1.35rem;
+                width: 80%;
+            }
+        }
+    </style>
+
+<body>
+
+    <div class="top-nav">
+
+    </div>
+    <nav>
+
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="/images/Abeeeee logo   - 1.png" alt="Smart Homes">
+                </a>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <div class="close-icon" onclick="toggleMenu()">✖</div>
+            <ul class="nav-links" onclick="closeMenu()">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="hometheaters.html">Home Theaters</a></li>
+                <li><a href="homeAutomation.html" class="active">Home Automation</a></li>
+                <li><a href="acousticsystem.html">Acoustic System</a></li>
+                <!-- <li><a href="#services">Services</a></li> -->
+                
+            </ul>
+            <button class="contact-btn"> <a href="contact.html">CONTACT US</a></button>
+
+           
+        </div>
+    </nav>
+
+
+    <div >
+
+        <!-- House Image (Fullscreen) -->
+        <div class="house-img">
+            <img id="allLightsOff" src="/images/home-automation/All-lights-off.png" style="display: block;">
+            <img id="balconyLightOn" src="/images/home-automation/All-lights-On.png" style="display: none;">
+            <img id="parkingLightOn" src="/images/home-automation/Balcony-lights-off.png" style="display: none;">
+            <img id="allLightsOn" src="/images/home-automation/Balcony-lights-On.png" style="display: none;">
+        </div>
+
+        <!-- Mobile Phone (Right Corner on Desktop, Below House on Mobile) -->
+        <div class="mobile-section">
+            <div class="mobile-content">
+                <p id="clock"></p> <!-- Clock placed inside the mobile screen -->
+                <img src="/images/Abhee Phone UI.png" alt="Mobile">
+                <div class="mobile-btns">
+                    <img src="/images/balcony-light- Turn-off.png.jpg"id="balconyOffBtn" onclick="toggleBalconyLight()">
+                    <img src="/images/Balocny lights Turn on1.jpg" id="balconyOnBtn" style="display: none;"
+                        onclick="toggleBalconyLight()">
+                    <img src="/images/parking-light-off.png" id="parkingOffBtn" onclick="toggleParkingLight()">
+                    <img src="/images/parking lights on-Button - 4.png" id="parkingOnBtn" style="display: none;"
+                        onclick="toggleParkingLight()">
+                    <!-- <div class="cursor"></div> -->
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <!-- <section class="automation-section bg-light"> -->
+        <div class="automation-container">
+            <div class="automation-content">
+                <!-- Image Column -->
+                <div id="automation-image" class="automation-image fade-in">
+                    <img src="/images/home-automation/Smart-Homes-2.jpg" alt="Smart Home Automation" class="responsive-img" id="automation-image">
+                </div>
+                <!-- Text Column -->
+                <div class="automation-text fade-in">
+                    <h2 class="automation-title text-info">How can Onwords make your daily routine easier?</h2>
+                    <p class="automation-desc">
+                        Picture yourself waking up in your home to the aroma of freshly brewed coffee, with the blinds
+                        gently opening to allow the sun's rays in.
+                        Your favorite playlist starts playing and your heater is already on for you to shower.
+                        As you head to the kitchen, the voice assistant reminds you of all the important tasks for the
+                        day and the vacuum cleaner has already cleaned your home, making it pleasant.
+                        Welcome to the world of Smart Home Automation.
+                    </p>
+                    <p class="automation-desc">
+                        Onwords has been providing smart technology solutions to clients with a wide range of services.
+                        Our automation services include smart home automation, Gate Automation, and Smart security
+                        cameras.
+                        We also offer expert construction, digital marketing, and web development.
+                    </p>
+                </div>
+            </div>
+        </div>
+    <!-- </section> -->
+
+
+    <div class="container-custom text-center text-white" id="advantages">
+        <h2 class="fade-in" id="advantages-title">Advantages Of Making Smart Home </h2>
+        <div class="row align-items-center mt-5 fade-in">
+            <div class="col-md-6 image-container">
+                <img src="/images/home-automation/Smart-Homes.jpg" alt="Smart Home" class="img-fluid">
+            </div>
+            <div class="col-md-6 text-start">
+                <div class="icon-text fade-in">
+                    <div class="icon"><img src="/images/home-automation/Inter-Conductivity.jpg" alt="Interconnectivity"></div>
+                    <span>Interconnectivity</span>
+                </div>
+                <div class="icon-text fade-in">
+                    <div class="icon"><img src="/images/home-automation/Remote-Monitering.jpg" alt="Remote Monitoring"></div>
+                    <span>Remote monitoring</span>
+                </div>
+                
+                <div class="icon-text fade-in">
+                    <div class="icon"><img src="/images/home-automation/Customization.jpg" alt="Customization"></div>
+                    <span>Customization</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-4">
+        <div class="box fade-in">
+            <img src="/images/home-automation/Fully-Customized-color.png" alt="Fully Customizable">
+            <div class="label">Fully Customizable</div>
+        </div>
+        <div class="box fade-in">
+            <img src="/images/home-automation/Device-Integrations-color.png" alt="Device Integrations">
+            <div class="label">Device Integrations</div>
+        </div>
+        <div class="box fade-in">
+            <img src="/images/home-automation/Automate-Everything-color.png" alt="Automate Everything">
+            <div class="label">Automate Everything</div>
+        </div>
+        <div class="box fade-in">
+            <img src="/images/home-automation/Work-Offline-color.png" alt="Works Offline">
+            <div class="label">Works Offline</div>
+        </div>
+        <div class="content fade-in">
+            <h2>Why Us</h2>
+            <p style="color: aliceblue;">Onwords Living Home - 200+ smart homes, 4000+ gate automations, proprietary
+                mobile app, and a dynamic young team of 250+ redefining smart living across Tamil Nadu.</p>
+            <a href="#" class="button">View More</a>
+        </div>
+    </div>
+
+
+
+
+    <div class="custom-container mt-5">
+        <div class="title-home-Au">
+            <h2 class="fade-in " id="products-title">products and services</h2>
+        </div>
+        <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/images/home-automation/Home-1.jpg" class="d-block w-100" alt="Image 1">
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="p-4">
+                                <h2 class="fade-in text-info">1. Complete Smart Home Control System </h2>
+                                <p class="text-white">This type of automation integrates various home systems—lighting, heating, temperature control, motion sensors, plugs, and even water heating—into one centralized app or remote control interface. It enhances energy efficiency, provides ease of access, and allows real-time control of home devices from anywhere.This is the description for slide 1. You can add any content here.</p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/images/home-automation/Home-2.jpg" class="d-block w-100 border-radius-10" alt="Image 2">
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="p-4">
+                                <h2 class="fade-in text-info">2. Smart Security and Surveillance Automation</h2>
+                                <p class="text-white">This system focuses on real-time security through high-definition surveillance cameras. Controlled via smartphones or tablets, users can monitor indoor and outdoor areas, detect movement, and get instant alerts. It significantly enhances home safety by integrating video analytics and remote access.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/images/home-automation/Home-3.jpg" class="d-block w-100" alt="Image 3">
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="p-4">
+                                <h2 class="fade-in text-info">3. AI-Powered Automated Ecosystem</h2>
+                                <p class="text-white">Using artificial intelligence and IoT (Internet of Things), this system creates a fully interconnected home where devices “talk” to each other. Lights, locks, security, appliances, and entertainment systems can adjust automatically based on user behavior and environmental data, offering a futuristic, efficient lifestyle.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+            </button>
+        </div>
+    </div>
+
+
+
+    <div class="mic-container">
+        <div class="container-5">
+            <h2>Works With Voice Assistants</h2>
+            <div class="mic-container-5">
+                <div class="ripple-container-5">
+                    <div class="ripple-5"></div>
+                    <div class="ripple-5"></div>
+                    <div class="ripple-5"></div>
+                </div>
+                <div class="mic-5" id="mic-btn-5">
+                    <i class="fa-solid fa-microphone"></i>
+                </div>
+            </div>
+            <div class="icons-5">
+                <div class="icon-5" id="google-5">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Google_Assistant_logo.svg"
+                        alt="Google">
+                    <p>Google</p>
+                </div>
+                <div class="icon-5" id="alexa-5">
+                   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+<linearGradient id="h2kxiVIJr8V9vJZ-JaxrPa_BzqHEq3B3jSY_gr1" x1="24" x2="24" y1="4" y2="44" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#33bbed"></stop><stop offset="1" stop-color="#0a82d6"></stop></linearGradient><path fill="url(#h2kxiVIJr8V9vJZ-JaxrPa_BzqHEq3B3jSY_gr1)" d="M22.923,4.028 C12.828,4.558,4.558,12.828,4.028,22.923C3.424,34.458,12.597,44,24,44l0-3.121c0-1.03-0.786-1.864-1.809-1.987 c-7.659-0.921-13.542-7.613-13.174-15.6c0.351-7.639,6.637-13.924,14.275-14.275C31.898,8.62,39,15.481,39,24 c0,0-0.001,0.239-0.033,0.662c-0.065,1.492-0.345,2.926-0.815,4.274C36.792,33.561,33.25,40.3,24,44c11.046,0,20-8.954,20-20 C44,12.597,34.458,3.424,22.923,4.028z"></path>
+</svg>
+                    <p>Alexa</p>
+                </div>
+                <div class="icon-5" id="siri-5">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/onwords-in.appspot.com/o/images%2Fsiri-logo.webp?alt=media&token=747124d6-080a-4e6a-934b-93eae8077687"
+                        alt="Siri">
+                    <p>Siri</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="countersection">
+
+        <div class="quote-2">
+            <h2 id="quote-3">"Innovation Distinguishes Between A Leader And A Follower."</h2>
+        </div>
+
+        <div class="counter-container">
+            <div class="counter-box">
+                <div class="counter-item">
+                    <div class="counter" data-target="5000">0</div>
+                    Clients
+                </div>
+                <div class="divider"></div>
+                <div class="counter-item">
+                    <div class="counter" data-target="400">0</div>
+                    Smart Homes
+                </div>
+                <div class="divider"></div>
+                <div class="counter-item">
+                    <div class="counter" data-target="5000">0</div>
+                    Projects
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--client section-->
+    <div class="client-section">
+        <h2 id="client">our clients</h2>
+        <div class="client-logos">
+            <img src="tiaano.png" alt="Tiaano">
+            <img src="school.png" alt="School Logo">
+            <img src="sikaram.png" alt="Sikaram">
+            <img src="royalcare.png" alt="Royal Care Hospital">
+            <img src="manimaligai.png" alt="Mani Maligai">
+            <!-- Duplicate images to make seamless loop -->
+            <img src="tiaano.png" alt="Tiaano">
+            <img src="school.png" alt="School Logo">
+            <img src="sikaram.png" alt="Sikaram">
+            <img src="royalcare.png" alt="Royal Care Hospital">
+            <img src="manimaligai.png" alt="Mani Maligai">
+        </div>
+    </div>
+
+
+
+
+  
+
+    <!--footer-->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Our App</a></li>
+                
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Our Services</h3>
+            <ul>
+                <li><a href="#">Smart Home</a></li>
+                <li><a href="#">Home Theaters</a></li>
+                <li><a href="#">Remote Gates </a></li>
+                <li><a href="#">Security System</a></li>
+                <li><a href="#">Solar Fencing</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Security System</a></li>
+                <li><a href="#">Smart Live</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+             <a href="https://www.instagram.com/abhee_smarthome_systems?igsh=ZzI0bGtsZHo3Nzhy" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
+             </a>
+              <a href="https://www.facebook.com/share/16DF8Dkm5Z/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook"></i>
+             </a>
+              <a href="https://youtube.com/@abheesmarthomes?si=hkqvvhBNuSkaAKBr" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-youtube"></i>
+             </a>
+              <a href="https://x.com/Abheesmarthomes?t=eE-eKZ-H2GqqWJSyysKVDw&s=09" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-x-twitter"></i>
+             </a>
+             
+            </div>
+            <div class="contact-details text-white ">
+                <p> AbhiSmarthomes, 2/68, First Floor, Avinashi Road, guntur, guntur, Andhra-pradesh - 522002</p>
+                <p> AbhiSmarthomes@gmail.com</p>
+                <p> 9838997899</p>
+            </div>
+        </div>
+
+    </footer>
+    <div class="line"></div>
+
+    <div class="footer-bottom align-content-lg-between">
+        &copy;2025 AbhiSmarthomes. All Rights Reserved | <a href="">Privacy Policy</a> | <a href="">Terms of Use</a>
+    </div>
+    <script>
+
+        //mic
+
+        $(document).ready(function () {
+            gsap.to(".container-5", { opacity: 1, duration: 1.5 });
+            gsap.to(".icon-5", { opacity: 1, scale: 1, duration: 1.5, stagger: 0.5, ease: "back.out(1.5)" });
+            gsap.to(".mic-5", { scale: 1.05, duration: 1.5, repeat: -1, yoyo: true, ease: "power1.inOut" });
+
+            $("#mic-btn-5").on("click", function () {
+                gsap.to(".mic-5", { scale: 1.3, duration: 0.2, yoyo: true, repeat: 1, ease: "power2.out" });
+                gsap.to(".mic-5", { boxShadow: "0 0 100px rgba(0, 89, 255, 1)", duration: 0.5, yoyo: true, repeat: 1 });
+            });
+
+            gsap.to("#google-5", { y: -10, scale: 1.1, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
+            gsap.to("#alexa-5", { y: 10, scale: 1.1, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
+            gsap.to("#siri-5", { y: -15, scale: 1.1, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut" });
+        });
+
+
+        //counter
+
+
+        function animateCounter(counter) {
+            const target = +counter.getAttribute("data-target");
+            const speed = 50;
+            const increment = Math.ceil(target / speed);
+            let current = 0;
+
+            function updateCounter() {
+                if (current < target) {
+                    current += increment;
+                    counter.innerText = current > target ? target : current;
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.innerText = target;
+                }
+            }
+
+            updateCounter();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".counter");
+            counters.forEach(counter => animateCounter(counter));
+        });
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script src="automation.js"></script>
+
+</body>
+
+</html>

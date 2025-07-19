@@ -1,0 +1,826 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');  */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+
+}
+
+:root {
+  --primary-color: #25a7e3;
+  --secondary-color: #5b849a;
+  --tertiary-color: #1f5876;
+  --quaternary-color: #0d6ba8;
+}
+
+
+body {
+  background-color: #000000;
+  overflow-x: hidden;
+  font-family: "Outfit", sans-serif;
+  scrollbar-width: 55px;
+  scrollbar-color: #ff0000 #f2ff00;
+}
+
+/* top navbar*/
+
+.top-nav {
+  width: 100%;
+  height: 30px;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+}
+
+nav {
+  background: linear-gradient(150deg, #ffffff, #e7e7e7);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 100px;
+}
+
+.nav-container::after {
+
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(25, 0, 255, 0.6), transparent);
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #bf0000, 0 0 10px #ff4e50;
+  }
+
+  100% {
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff4e50, 0 0 30px #ff4e50;
+  }
+}
+
+.nav-container .logo img {
+  height: 50px;
+  max-width: 150px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  margin-left: -60px;
+}
+
+.nav-container .logo img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 17px;
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  background: linear-gradient(90deg, #3a9bd3, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 10px 0;
+  position: relative;
+  transition: all 0.3s ease;
+  text-transform: initial;
+  letter-spacing: 1px;
+  padding-top: 12px;
+}
+
+/* Smooth Underline Effect */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: width 0.4s ease-in-out;
+  animation: shine 3s infinite linear;
+
+}
+
+/* @keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  } */
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Active Link Underline */
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: #FF6F00;
+  text-shadow: 0 0 15px #FFFFFF;
+}
+
+.contact-btn {
+  background: linear-gradient(to bottom, #8ac3e4, #47c0df);
+  border: 1px solid #88ccd8;
+  border-radius: 50px;
+  padding: 10px 20px;
+  color: rgb(234, 239, 243);
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+margin-left: -20px;
+  
+  
+}
+.contact-btn a{
+  text-decoration: none;
+  color: rgb(86, 90, 93);
+}
+
+.contact-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: #9d1515;
+  cursor: pointer;
+}
+
+.close-icon {
+  display: none;
+  font-size: 28px;
+  color: #000000;
+  cursor: pointer;
+  text-align: right;
+  padding: 20px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-container {
+    padding: 15px 20px;
+  }
+
+  .nav-container .logo img {
+    height: 40px;
+    max-width: 120px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    padding-top: 30px;
+    z-index: 999;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .nav-links a {
+    font-size: 22px;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+    background: #ffffff;
+  }
+
+  .close-icon.active {
+    display: block;
+  }
+
+  .nav-container .logo img {
+    margin-left: 0px;
+  }
+}
+
+/* Smaller Devices like Phones */
+@media (max-width: 480px) {
+  .nav-container .logo img {
+    height: 35px;
+    max-width: 100px;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .nav-container .logo img {
+    margin-left: 0px;
+  }
+}
+
+
+
+/*hero section--------------------------------------------------*/
+.custom-img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-family: "poppins", serif;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);   
+    font-weight: 800;
+}
+
+.home-hero-button {
+    background-color: #f7f7f7;
+    color: rgb(0, 183, 255);
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .hero-text {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        width: 100%;
+        margin-top: -125px;
+        font-size: 1.2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .home-hero-button {
+        background-color: #f7f7f7;
+
+        color: rgb(0, 183, 255);
+        font-weight: bold;
+        padding: 7px 13px;
+        border: none;
+        border-radius: 5px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+}
+
+
+
+/* Home Automation hero page--------------------------------- */
+
+#responsive-img-1 {
+    display: none;
+
+}
+
+@media (max-width: 768px) {
+    #responsive-img-1 {
+        display: block;
+    }
+
+    #responsive-img-2 {}
+}
+
+
+/*second section*/
+
+
+/*third section*/
+
+
+
+
+/*fifth section*/
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 2000px;
+    margin: 10px auto;
+}
+
+/* Image Styling */
+.image--desktop-only {
+    position: relative;
+    width: 100%;
+}
+
+.image--desktop-only img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Text Overlay (Desktop) */
+.text-content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background: none;
+    /* Semi-transparent for readability */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Heading and Paragraph Styles */
+.text-content h4 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.text-content h1 {
+    margin: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "poppins", serif;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    margin-top:20px;
+}
+
+/* Button Styling */
+.onkyo-buttonThree1 {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgb(98, 226, 255);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.onkyo-buttonThree1:hover {
+    background: rgb(51, 87, 111);
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .text-content {
+        position: static;
+        transform: none;
+        width: 100%;
+        padding: 20px;
+        border-radius: 0;
+        background: rgb(255, 255, 255);
+        color: #000000;
+    }
+
+    .text-content h1 {
+        font-size: 2rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+    }
+}
+/*speaker-section*/
+
+.speaker{
+    width: 100%;
+    height: auto;
+    display: block;
+    position:relative;
+}
+.speaker img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.speaker .overlap{
+    position: absolute;
+    top:50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: none;
+    color: rgb(255, 255, 255);
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.speaker .overlap h3{
+    font-weight: 900;
+    font-family: "poppins";
+    font-size: 2.6rem;
+}
+
+@media screen and (max-width: 768px) {
+    .speaker .overlap h3{
+        font-weight: 900;
+        font-family: "poppins";
+        font-size: 0.7rem;
+    }
+    
+}
+
+
+/*fifth section*/
+.product-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+}
+
+.carousel img {
+    border-radius: 10px;
+}
+
+.color-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.color-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid gray;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.color-btn[data-color="white"] {
+    background-color: white;
+}
+
+.color-btn[data-color="black"] {
+    background-color: black;
+}
+
+.color-btn.active {
+    border: 3px solid blue;
+}
+
+
+/*sixthh section*/
+
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Text Overlay on Desktop */
+.text-overlay {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: none;
+    color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.text-overlay h2 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    font-family: "poppins";
+    font-weight: 800;
+}
+
+.text-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+     font-family: "poppins";
+}
+
+/* CTA Button */
+.onkyo-buttonThree {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    background: rgb(98, 226, 255);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.onkyo-buttonThree:hover {
+    background: rgb(51, 87, 111);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .text-overlay {
+        position: static;
+        transform: none;
+        width: 100%;
+        background: none;
+        padding: 40px 20px;
+        color: #000000;
+        font-family: "Outfit", sans-serif;
+        font-weight: 400;
+    }
+
+    .text-overlay h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+    }
+
+    .text-overlay p {
+        font-size: 1rem;
+    }
+
+    .onkyo-buttonThree {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-overlay {
+        padding: 30px 15px;
+    }
+
+    .text-overlay h2 {
+        font-size: 1.6rem;
+    }
+
+    .text-overlay p {
+        font-size: 0.95rem;
+    }
+
+    .onkyo-buttonThree {
+        padding: 10px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-overlay h2 {
+        font-size: 1.4rem;
+    }
+
+    .text-overlay p {
+        font-size: 0.9rem;
+    }
+
+    .onkyo-buttonThree {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+/* nineth section*/
+
+
+/* Wrapper for content */
+.content-wrapper {
+    max-width: 900px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* Styling for text block */
+.info-text {
+    font-family: "Outfit", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 0 20px;
+    color: #333;
+}
+
+/* Custom Button */
+.custom-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    background-color: #79cef8;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.custom-btn:hover {
+    background: rgb(51, 87, 111);
+}
+
+.info-highlight {
+    color: #25bed5;
+    font-family: "playfair display", serif;
+    font-weight: 800;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .info-text {
+        margin-top: -100px;
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .custom-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+/*footer*/
+.footer {
+    background-color:var(--primary-color);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    border-color: rgb(35, 34, 34);
+}
+
+.footer-column {
+    flex: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-column h3 {
+    color: rgb(253, 250, 253);
+}
+
+.footer-column h3 :hover {
+    color: blue;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 8px 0;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-bottom {
+    justify-content: space-between;
+    padding: 40px;
+    background-color:rgb(70, 188, 235);
+    border-top: 1px solid rgb(234, 226, 226);
+    color:white;
+}
+
+.footer-bottom a{
+    text-decoration: none;
+    color: white;
+}
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.social-icons .fa-brands {
+    color: white;
+    font-size: 27px;
+    transition: 0.3s;
+}
+
+.social-icons  a:hover i {
+    color: rgb(239, 71, 150); 
+}
+
+.social-icons a:nth-child(2):hover i {
+    color: rgb(69, 100, 213); 
+}
+.social-icons a:nth-child(3):hover i{
+    color:rgb(177, 54, 54);
+}
+.social-icons a:nth-child(4):hover i{
+    color:black;
+}
+
+
+
+
+
+.contact-details {
+    margin-top: 10px;
+}
+
+.store-buttons img {
+    width: 120px;
+    margin-top: 10px;
+}
